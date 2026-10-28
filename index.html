@@ -553,6 +553,7 @@
       if (p < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
+    setTimeout(() => { el.textContent = to; }, 1600);
   };
 
   const io = new IntersectionObserver(entries => {
