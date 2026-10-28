@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>شركة المقاولات</title>
+<link rel="canonical" href="https://haithamkh.com/">
+<meta name="description" content="شركة المقاولات — بناء، تشطيبات، بنى تحتية وإدارة مشاريع بجودة والتزام بالمواعيد.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f1b2d;
+    --navy-2:#16263d;
+    --ink:#1b2430;
+    --muted:#5d6878;
+    --line:#e4e7ec;
+    --bg:#ffffff;
+    --bg-soft:#f5f6f8;
+    --accent:#e0a526;
+    --accent-dark:#b9841a;
+    --radius:14px;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+  section{padding:96px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--accent-dark);font-weight:600;font-size:14px;letter-spacing:.3px;margin-bottom:14px}
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--accent)}
+  h1,h2,h3{line-height:1.35;font-weight:700}
+  h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:16px}
+  .lead{color:var(--muted);font-size:17px;max-width:620px}
+  .section-head{margin-bottom:56px}
+  .section-head.center{text-align:center}
+  .section-head.center .lead{margin:0 auto}
+  .section-head.center .eyebrow::after{content:"";width:28px;height:2px;background:var(--accent)}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px;transition:.25s;border:2px solid transparent;cursor:pointer;font-family:inherit}
+  .btn-primary{background:var(--accent);color:var(--navy)}
+  .btn-primary:hover{background:#f0b739;transform:translateY(-2px)}
+  .btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+
+  /* Header */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s}
+  header.scrolled{background:rgba(15,27,45,.96);backdrop-filter:blur(8px);box-shadow:0 4px 24px rgba(0,0,0,.15)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+  .logo{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700;font-size:19px}
+  .logo-mark{width:42px;height:42px;border-radius:10px;background:var(--accent);display:grid;place-items:center}
+  .logo small{display:block;font-size:12px;font-weight:400;color:rgba(255,255,255,.65);line-height:1.2}
+  .nav-links{display:flex;gap:34px;list-style:none}
+  .nav-links a{color:rgba(255,255,255,.85);font-size:15px;font-weight:500;transition:.2s;position:relative}
+  .nav-links a:hover{color:var(--accent)}
+  .nav-cta{padding:10px 22px;font-size:14px}
+  .menu-btn{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:6px}
+
+  /* Hero */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--navy);color:#fff;overflow:hidden;padding:140px 0 100px}
+  .hero-bg{position:absolute;inset:0;opacity:.5}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,27,45,.2),rgba(15,27,45,.95) 65%)}
+  .hero .container{position:relative;z-index:2;width:100%}
+  .hero-content{max-width:680px}
+  .hero h1{font-size:clamp(36px,5.4vw,62px);margin-bottom:22px}
+  .hero h1 span{color:var(--accent)}
+  .hero p{font-size:18px;color:rgba(255,255,255,.75);margin-bottom:38px;max-width:560px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-badges{display:flex;gap:28px;margin-top:56px;flex-wrap:wrap}
+  .hero-badges div{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.8);font-size:14px}
+  .hero-badges svg{color:var(--accent)}
+
+  /* Stats */
+  .stats{padding:0;position:relative;z-index:3;margin-top:-60px}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:var(--radius);box-shadow:0 20px 50px rgba(15,27,45,.12);overflow:hidden}
+  .stat{padding:36px 24px;text-align:center;border-inline-start:1px solid var(--line)}
+  .stat:first-child{border-inline-start:0}
+  .stat b{display:block;font-size:40px;color:var(--navy);line-height:1.2}
+  .stat b em{font-style:normal;color:var(--accent)}
+  .stat span{color:var(--muted);font-size:15px}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+  .about-visual{position:relative;aspect-ratio:4/4.4;border-radius:var(--radius);overflow:hidden;background:var(--navy-2)}
+  .about-visual svg{width:100%;height:100%}
+  .about-tag{position:absolute;bottom:24px;right:24px;background:var(--accent);color:var(--navy);padding:18px 22px;border-radius:12px;font-weight:700;line-height:1.4}
+  .about-tag b{display:block;font-size:34px}
+  .about p{color:var(--muted);margin-bottom:18px}
+  .values{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+  .value{display:flex;gap:12px;align-items:flex-start}
+  .value i{flex:none;width:26px;height:26px;border-radius:50%;background:rgba(224,165,38,.15);color:var(--accent-dark);display:grid;place-items:center;font-style:normal;font-size:14px;margin-top:3px}
+  .value strong{display:block;font-size:16px}
+  .value span{color:var(--muted);font-size:14px}
+
+  /* Services */
+  .services{background:var(--bg-soft)}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .service{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:36px 30px;transition:.3s;position:relative;overflow:hidden}
+  .service::before{content:"";position:absolute;top:0;right:0;width:0;height:3px;background:var(--accent);transition:.35s}
+  .service:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,27,45,.08);border-color:transparent}
+  .service:hover::before{width:100%}
+  .service-icon{width:58px;height:58px;border-radius:12px;background:var(--navy);color:var(--accent);display:grid;place-items:center;margin-bottom:22px}
+  .service h3{font-size:20px;margin-bottom:10px}
+  .service p{color:var(--muted);font-size:15px}
+
+  /* Projects */
+  .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .project{border-radius:var(--radius);overflow:hidden;position:relative;aspect-ratio:4/3.3;cursor:default}
+  .project:first-child{grid-row:span 2;aspect-ratio:auto}
+  .project svg{width:100%;height:100%;transition:.6s}
+  .project:hover svg{transform:scale(1.05)}
+  .project-info{position:absolute;inset:auto 0 0 0;padding:26px;background:linear-gradient(transparent,rgba(15,27,45,.92));color:#fff}
+  .project-info span{font-size:13px;color:var(--accent)}
+  .project-info h3{font-size:19px}
+
+  /* Process */
+  .process{background:var(--navy);color:#fff}
+  .process .lead{color:rgba(255,255,255,.65)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+  .step{padding:32px 26px;border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);position:relative;transition:.3s}
+  .step:hover{border-color:var(--accent);background:rgba(255,255,255,.03)}
+  .step::before{counter-increment:s;content:"0" counter(s);font-size:44px;font-weight:700;color:transparent;-webkit-text-stroke:1px var(--accent);display:block;line-height:1;margin-bottom:20px}
+  .step h3{font-size:19px;margin-bottom:8px}
+  .step p{color:rgba(255,255,255,.62);font-size:15px}
+
+  /* Why */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .why{text-align:center;padding:16px}
+  .why .service-icon{margin:0 auto 20px;background:rgba(224,165,38,.12);color:var(--accent-dark)}
+  .why h3{font-size:18px;margin-bottom:8px}
+  .why p{color:var(--muted);font-size:15px}
+
+  /* CTA */
+  .cta{padding:0 0 96px}
+  .cta-box{background:var(--accent);border-radius:20px;padding:56px 60px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;position:relative;overflow:hidden}
+  .cta-box::after{content:"";position:absolute;left:-60px;top:-60px;width:240px;height:240px;border:40px solid rgba(255,255,255,.15);border-radius:50%}
+  .cta-box h2{color:var(--navy);margin-bottom:6px}
+  .cta-box p{color:rgba(15,27,45,.75)}
+  .cta-box .btn{background:var(--navy);color:#fff;position:relative;z-index:1}
+  .cta-box .btn:hover{background:var(--navy-2)}
+
+  /* Contact */
+  .contact{background:var(--bg-soft)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:48px}
+  .contact-list{display:grid;gap:18px;margin-top:30px}
+  .contact-item{display:flex;gap:16px;align-items:center;background:#fff;padding:20px;border-radius:12px;border:1px solid var(--line)}
+  .contact-item .service-icon{width:48px;height:48px;margin:0;flex:none}
+  .contact-item span{display:block;color:var(--muted);font-size:13px}
+  .contact-item strong{font-size:16px;direction:ltr;unicode-bidi:plaintext}
+  form{background:#fff;padding:40px;border-radius:var(--radius);border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  form .full{grid-column:1/-1}
+  label{display:block;font-size:14px;font-weight:500;margin-bottom:6px}
+  input,select,textarea{width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:15px;background:var(--bg-soft);transition:.2s;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:0;border-color:var(--accent);background:#fff}
+  textarea{min-height:130px;resize:vertical}
+
+  /* Footer */
+  footer{background:var(--navy);color:rgba(255,255,255,.65);padding:64px 0 28px;font-size:15px}
+  .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+  footer h4{color:#fff;font-size:16px;margin-bottom:16px}
+  footer ul{list-style:none;display:grid;gap:8px}
+  footer a:hover{color:var(--accent)}
+  .footer-bottom{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:14px}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:980px){
+    .nav-links,.nav-cta{display:none}
+    .menu-btn{display:block}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:80px;inset-inline:0;background:var(--navy);padding:24px 20px;gap:18px}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(3){border-inline-start:0}
+    .stat:nth-child(n+3){border-top:1px solid var(--line)}
+    .about-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+    .services-grid,.projects-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
+    .project:first-child{grid-row:auto;aspect-ratio:4/3.3}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .footer-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:600px){
+    section{padding:72px 0}
+    .container{padding:0 16px}
+    .services-grid,.projects-grid,.why-grid,.steps,.values{grid-template-columns:1fr}
+    .stat b{font-size:32px}
+    form{grid-template-columns:1fr;padding:24px}
+    .cta-box{padding:40px 28px}
+    .footer-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header id="top">
+  <div class="container nav">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f1b2d" stroke-width="2.2" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg>
+      </div>
+      <div>شركة المقاولات<small>بناء · تشطيبات · بنى تحتية</small></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">من نحن</a></li>
+      <li><a href="#services">خدماتنا</a></li>
+      <li><a href="#projects">مشاريعنا</a></li>
+      <li><a href="#process">آلية العمل</a></li>
+      <li><a href="#contact">تواصل معنا</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary nav-cta">اطلب عرض سعر</a>
+    <button class="menu-btn" id="menuBtn" aria-label="القائمة">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <svg class="hero-bg" viewBox="0 0 800 600" preserveAspectRatio="xMinYMid slice" aria-hidden="true">
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,.06)"/></pattern>
+    </defs>
+    <rect width="800" height="600" fill="url(#grid)"/>
+    <g fill="none" stroke="rgba(224,165,38,.55)" stroke-width="1.5">
+      <!-- crane -->
+      <path d="M120 600V120M100 600V120M100 120h20M100 160l20-40M120 160l-20 40M100 200l20 40M120 240l-20 40M100 280l20 40M120 320l-20 40M100 360l20 40M120 400l-20 40M100 440l20 40"/>
+      <path d="M60 120h360M110 70v50M110 70l-50 50M110 70l310 50"/>
+      <path d="M380 120v110"/><rect x="365" y="230" width="30" height="20"/>
+    </g>
+    <g fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.18)">
+      <rect x="200" y="300" width="110" height="300"/>
+      <rect x="330" y="360" width="90" height="240"/>
+      <rect x="440" y="250" width="130" height="350"/>
+      <rect x="590" y="330" width="100" height="270"/>
+    </g>
+    <g fill="rgba(224,165,38,.35)">
+      <rect x="215" y="320" width="18" height="14"/><rect x="250" y="320" width="18" height="14"/><rect x="215" y="360" width="18" height="14"/><rect x="285" y="400" width="18" height="14"/>
+      <rect x="460" y="270" width="18" height="14"/><rect x="500" y="310" width="18" height="14"/><rect x="540" y="270" width="18" height="14"/><rect x="460" y="350" width="18" height="14"/>
+      <rect x="610" y="350" width="18" height="14"/><rect x="650" y="390" width="18" height="14"/>
+    </g>
+  </svg>
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">شركة مقاولات عامة</div>
+      <h1>نبني <span>بثقة</span>،<br>ونسلّم بإتقان</h1>
+      <p>شريكك الموثوق في تنفيذ المشاريع السكنية والتجارية والبنى التحتية — من التصميم وحتى التسليم، بجودة عالية والتزام تام بالمواعيد.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">ابدأ مشروعك معنا
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        </a>
+        <a href="#projects" class="btn btn-ghost">شاهد أعمالنا</a>
+      </div>
+      <div class="hero-badges">
+        <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>مرخّصة ومعتمدة</div>
+        <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>كادر هندسي متخصص</div>
+        <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>ضمان على الأعمال</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Stats ===== -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid reveal">
+      <div class="stat"><b><span class="count" data-to="3">0</span></b><span>سنوات خبرة</span></div>
+      <div class="stat"><b><em>+</em><span class="count" data-to="50">0</span></b><span>مشروع منجز</span></div>
+      <div class="stat"><b><span class="count" data-to="8">0</span></b><span>كادر هندسي وفني</span></div>
+      <div class="stat"><b><span class="count" data-to="6">0</span></b><span>خدمات متكاملة</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <svg viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="400" height="440" fill="#16263d"/>
+        <g stroke="rgba(255,255,255,.08)"><path d="M0 110h400M0 220h400M0 330h400M100 0v440M200 0v440M300 0v440"/></g>
+        <g fill="none" stroke="#e0a526" stroke-width="2">
+          <path d="M70 380V170l130-90 130 90v210z"/>
+          <path d="M70 170h260M200 80v300M70 275h260"/>
+          <path d="M70 170l130 105 130-105M70 275l130 105 130-105" stroke-opacity=".45"/>
+        </g>
+        <circle cx="200" cy="80" r="6" fill="#e0a526"/>
+        <circle cx="70" cy="170" r="5" fill="#e0a526"/><circle cx="330" cy="170" r="5" fill="#e0a526"/>
+        <circle cx="70" cy="380" r="5" fill="#e0a526"/><circle cx="330" cy="380" r="5" fill="#e0a526"/>
+      </svg>
+      <div class="about-tag"><b>+50</b>مشروع منجز</div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">من نحن</div>
+      <h2>خبرة متراكمة في بناء مشاريع تدوم</h2>
+      <p>تأسست شركة المقاولات لتقدّم حلولاً متكاملة في قطاع الإنشاءات، معتمدةً على فريق من المهندسين والفنيين ذوي الخبرة، وأحدث المعدّات وأساليب الإدارة الحديثة للمشاريع.</p>
+      <p>نؤمن أن كل مشروع هو شراكة طويلة الأمد مع عملائنا، لذلك نلتزم بأعلى معايير الجودة والسلامة والشفافية في كل مرحلة من مراحل التنفيذ.</p>
+      <div class="values">
+        <div class="value"><i>✓</i><div><strong>رؤيتنا</strong><span>أن نكون الخيار الأول في قطاع المقاولات.</span></div></div>
+        <div class="value"><i>✓</i><div><strong>رسالتنا</strong><span>تنفيذ مشاريع بجودة تفوق التوقعات.</span></div></div>
+        <div class="value"><i>✓</i><div><strong>الجودة</strong><span>مواد معتمدة ورقابة هندسية مستمرة.</span></div></div>
+        <div class="value"><i>✓</i><div><strong>الالتزام</strong><span>تسليم في الوقت وضمن الميزانية.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow">خدماتنا</div>
+      <h2>حلول إنشائية متكاملة</h2>
+      <p class="lead">نغطي جميع مراحل المشروع بخدمات متخصصة تلبّي احتياجات القطاعين العام والخاص.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service reveal">
+        <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-5h6v5M9 11h.01M15 11h.01"/></svg></div>
+        <h3>المباني السكنية والتجارية</h3>
+        <p>تشييد الفلل والعمارات السكنية والمجمّعات التجارية والمكاتب وفق أعلى المواصفات.</p>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19h16M4 15l4-10h8l4 10M9 5l-1 10M15 5l1 10M12 5v10"/></svg></div>
+        <h3>البنى التحتية والطرق</h3>
+        <p>تنفيذ الطرق والجسور وشبكات الماء والمجاري وتصريف الأمطار.</p>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M14 4l6 6-9 9H5v-6z M12 6l6 6"/></svg></div>
+        <h3>التشطيبات والديكور</h3>
+        <p>أعمال التشطيب الداخلي والخارجي والواجهات والأرضيات بلمسة عصرية أنيقة.</p>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg></div>
+        <h3>التصميم الهندسي</h3>
+        <p>تصاميم معمارية وإنشائية متكاملة مع المخططات التنفيذية والحسابات.</p>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
+        <h3>إدارة المشاريع والإشراف</h3>
+        <p>تخطيط ومتابعة الجداول الزمنية والتكاليف والإشراف الهندسي الميداني.</p>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
+        <h3>الترميم والصيانة</h3>
+        <p>ترميم وتأهيل المباني القائمة وأعمال الصيانة الدورية والتدعيم الإنشائي.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Projects ===== -->
+<section id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">مشاريعنا</div>
+      <h2>أعمال نفخر بها</h2>
+      <p class="lead">نماذج من المشاريع التي نفّذناها بنجاح في مختلف القطاعات.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project reveal">
+        <svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="p1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a4365"/><stop offset="1" stop-color="#0f1b2d"/></linearGradient></defs>
+          <rect width="400" height="600" fill="url(#p1)"/>
+          <rect x="110" y="120" width="180" height="480" fill="#1c2f4a" stroke="#e0a526" stroke-opacity=".5"/>
+          <g fill="#e0a526" fill-opacity=".5"><rect x="130" y="150" width="30" height="20"/><rect x="185" y="150" width="30" height="20"/><rect x="240" y="150" width="30" height="20"/><rect x="130" y="200" width="30" height="20"/><rect x="240" y="200" width="30" height="20"/><rect x="185" y="250" width="30" height="20"/><rect x="130" y="300" width="30" height="20"/><rect x="240" y="300" width="30" height="20"/><rect x="185" y="350" width="30" height="20"/><rect x="130" y="400" width="30" height="20"/><rect x="240" y="400" width="30" height="20"/></g>
+          <rect x="20" y="320" width="80" height="280" fill="#16263d"/><rect x="300" y="260" width="90" height="340" fill="#16263d"/>
+        </svg>
+        <div class="project-info"><span>تجاري</span><h3>برج إداري متعدد الطوابق</h3></div>
+      </div>
+      <div class="project reveal">
+        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="330" fill="#3b4a5e"/>
+          <rect y="230" width="400" height="100" fill="#2a3646"/>
+          <path d="M90 230V140l110-60 110 60v90z" fill="#e8e2d6"/><path d="M80 145l120-70 120 70" fill="none" stroke="#e0a526" stroke-width="6"/>
+          <rect x="175" y="170" width="50" height="60" fill="#0f1b2d"/><rect x="115" y="160" width="40" height="30" fill="#5b7392"/><rect x="245" y="160" width="40" height="30" fill="#5b7392"/>
+        </svg>
+        <div class="project-info"><span>سكني</span><h3>مجمّع فلل سكنية</h3></div>
+      </div>
+      <div class="project reveal">
+        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="330" fill="#c9cfd8"/>
+          <path d="M0 240h400v90H0z" fill="#4a5568"/>
+          <path d="M0 200q200-120 400 0" fill="none" stroke="#0f1b2d" stroke-width="10"/>
+          <path d="M0 210h400" stroke="#0f1b2d" stroke-width="10"/>
+          <g stroke="#0f1b2d" stroke-width="4"><path d="M60 175v35M120 145v65M200 132v78M280 145v65M340 175v35"/></g>
+          <path d="M0 280h400" stroke="#e0a526" stroke-width="4" stroke-dasharray="26 18"/>
+        </svg>
+        <div class="project-info"><span>بنى تحتية</span><h3>جسر وطريق رئيسي</h3></div>
+      </div>
+      <div class="project reveal">
+        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="330" fill="#efe9df"/>
+          <rect y="250" width="400" height="80" fill="#b89b74"/>
+          <rect x="40" y="60" width="140" height="190" fill="#fff" stroke="#d6cbb8"/>
+          <rect x="60" y="80" width="100" height="120" fill="#a9c1d6"/>
+          <rect x="220" y="170" width="140" height="80" rx="8" fill="#0f1b2d"/><rect x="230" y="150" width="120" height="30" rx="8" fill="#16263d"/>
+          <circle cx="290" cy="60" r="22" fill="none" stroke="#e0a526" stroke-width="4"/><path d="M290 20v18" stroke="#e0a526" stroke-width="3"/>
+        </svg>
+        <div class="project-info"><span>تشطيبات</span><h3>تصميم وتشطيب داخلي فاخر</h3></div>
+      </div>
+      <div class="project reveal">
+        <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="330" fill="#1c2f4a"/>
+          <rect x="30" y="140" width="340" height="190" fill="#2a4365"/>
+          <g fill="#e0a526" fill-opacity=".6"><rect x="55" y="170" width="60" height="40"/><rect x="135" y="170" width="60" height="40"/><rect x="215" y="170" width="60" height="40"/><rect x="295" y="170" width="50" height="40"/><rect x="55" y="240" width="60" height="40"/><rect x="295" y="240" width="50" height="40"/></g>
+          <rect x="160" y="250" width="80" height="80" fill="#0f1b2d"/>
+          <path d="M20 140h360" stroke="#e0a526" stroke-width="6"/>
+        </svg>
+        <div class="project-info"><span>حكومي</span><h3>مبنى مدرسي نموذجي</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Process ===== -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow">آلية العمل</div>
+      <h2>من الفكرة إلى التسليم</h2>
+      <p class="lead">منهجية واضحة ومنظّمة تضمن سير مشروعك بسلاسة في كل مرحلة.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>الاستشارة والدراسة</h3><p>نستمع لاحتياجاتك وندرس الموقع ونحدد متطلبات المشروع.</p></div>
+      <div class="step reveal"><h3>التصميم والتسعير</h3><p>نقدّم التصاميم والمخططات مع عرض سعر مفصّل وشفاف.</p></div>
+      <div class="step reveal"><h3>التنفيذ والإشراف</h3><p>ننفّذ الأعمال بإشراف هندسي ونطلعك على التقدم أولاً بأول.</p></div>
+      <div class="step reveal"><h3>التسليم والضمان</h3><p>نسلّم المشروع جاهزاً مع ضمان وخدمة ما بعد التسليم.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why us ===== -->
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <div class="eyebrow">لماذا نحن</div>
+      <h2>ما يميّزنا عن غيرنا</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>الالتزام بالوقت</h3><p>جداول زمنية دقيقة ونلتزم بها.</p></div>
+      <div class="why reveal"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>السلامة أولاً</h3><p>تطبيق صارم لمعايير السلامة المهنية.</p></div>
+      <div class="why reveal"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21.2 7 14.2 2 9.4l7-.9z"/></svg></div><h3>جودة مضمونة</h3><p>مواد معتمدة وفحوصات مستمرة.</p></div>
+      <div class="why reveal"><div class="service-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>أسعار تنافسية</h3><p>أفضل قيمة مقابل جودة التنفيذ.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div>
+        <h2>لديك مشروع في بالك؟</h2>
+        <p>تواصل معنا اليوم واحصل على استشارة مجانية وعرض سعر مفصّل.</p>
+      </div>
+      <a href="#contact" class="btn">تواصل معنا الآن</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">تواصل معنا</div>
+      <h2>يسعدنا سماعك</h2>
+      <p class="lead">أرسل لنا تفاصيل مشروعك وسيتواصل معك أحد مهندسينا خلال 24 ساعة.</p>
+      <div class="contact-list">
+        <div class="contact-item">
+          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div><span>الهاتف</span><strong><a href="tel:+9647707878769">0770 787 8769</a></strong></div>
+        </div>
+        <div class="contact-item">
+          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+          <div><span>البريد الإلكتروني</span><strong>info@haithamkh.com</strong></div>
+        </div>
+        <div class="contact-item">
+          <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><span>العنوان</span><strong>بغداد – السيدية</strong></div>
+        </div>
+      </div>
+    </div>
+    <form class="reveal" id="contactForm">
+      <div><label for="name">الاسم الكامل</label><input id="name" required></div>
+      <div><label for="phone">رقم الهاتف</label><input id="phone" type="tel" required></div>
+      <div class="full"><label for="type">نوع المشروع</label>
+        <select id="type">
+          <option>مبنى سكني</option><option>مبنى تجاري</option><option>بنى تحتية</option><option>تشطيبات</option><option>ترميم وصيانة</option><option>أخرى</option>
+        </select>
+      </div>
+      <div class="full"><label for="msg">تفاصيل المشروع</label><textarea id="msg"></textarea></div>
+      <div class="full"><button class="btn btn-primary" type="submit">إرسال الطلب عبر واتساب</button></div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="logo" style="margin-bottom:16px">
+          <div class="logo-mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f1b2d" stroke-width="2.2" stroke-linejoin="round"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6"/></svg></div>
+          <div>شركة المقاولات<small>بناء · تشطيبات · بنى تحتية</small></div>
+        </a>
+        <p>نبني مستقبلاً أفضل بمشاريع تجمع بين الجودة والمتانة والتصميم العصري.</p>
+      </div>
+      <div><h4>روابط سريعة</h4><ul><li><a href="#about">من نحن</a></li><li><a href="#services">خدماتنا</a></li><li><a href="#projects">مشاريعنا</a></li><li><a href="#contact">تواصل معنا</a></li></ul></div>
+      <div><h4>خدماتنا</h4><ul><li>المباني السكنية</li><li>البنى التحتية</li><li>التشطيبات</li><li>إدارة المشاريع</li></ul></div>
+      <div><h4>ساعات العمل</h4><ul><li>السبت – الخميس</li><li>8:00 ص – 5:00 م</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> شركة المقاولات. جميع الحقوق محفوظة.</span>
+      <a href="#top">العودة للأعلى ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // رقم الواتساب لاستقبال الطلبات (بدون + أو أصفار بالبداية)
+  const WHATSAPP_NUMBER = "9647707878769";
+
+  const header = document.querySelector("header");
+  const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 40);
+  window.addEventListener("scroll", onScroll); onScroll();
+
+  const navLinks = document.getElementById("navLinks");
+  document.getElementById("menuBtn").addEventListener("click", () => navLinks.classList.toggle("open"));
+  navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const countUp = el => {
+    const to = +el.dataset.to, start = performance.now();
+    const tick = t => {
+      const p = Math.min((t - start) / 1400, 1);
+      el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      e.target.querySelectorAll(".count").forEach(countUp);
+      io.unobserve(e.target);
+    });
+  }, { threshold: .15 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  document.getElementById("contactForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    const text = `طلب جديد من الموقع\nالاسم: ${v("name")}\nالهاتف: ${v("phone")}\nنوع المشروع: ${v("type")}\nالتفاصيل: ${v("msg")}`;
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
+  });
+</script>
+</body>
+</html>
